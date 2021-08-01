@@ -4,6 +4,7 @@
 делает данная функция и предложите вариант реализации этой функции через отдельный
 класс.
 
+```PHP
 function filter($users, $_rating = false, $_name = null, $_role = '')
 {
   $types = array_map('gettype', [1, .1]);
@@ -40,3 +41,4 @@ function filter($users, $_rating = false, $_name = null, $_role = '')
   err_invalid_args:
   exit('Wrong input arguments');
 }
+```
