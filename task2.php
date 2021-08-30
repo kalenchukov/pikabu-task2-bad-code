@@ -15,17 +15,17 @@ class Filter
 	/**
 	 * Рейтинг
 	 */
-	private int|float|null $rating = NULL;
+	private int|float|null $rating = null;
 
 	/**
 	 * Имя
 	 */
-	private string|null $name = NULL;
+	private string|null $name = null;
 
 	/**
 	 * Роль
 	 */
-	private string|null $role = NULL;
+	private string|null $role = null;
 
 	function __construct(array $users)
 	{
@@ -71,18 +71,18 @@ class Filter
 
 		foreach ($this->users as $user)
 		{
-			if (is_object($user) === FALSE)
+			if (is_object($user) === false)
 			{
 				throw new Exception('Wrong input arguments');
 			}
 
 			if ($user->id > 0)
 			{
-				if ($this->rating === NULL || $user->rating >= $this->rating)
+				if ($this->rating === null || $user->rating >= $this->rating)
 				{
-					if ($this->name === NULL || substr_count($user->name, $this->name) > 0)
+					if ($this->name === null || substr_count($user->name, $this->name) > 0)
 					{
-						if ($this->role === NULL || in_array($this->role, $user->roles, TRUE))
+						if ($this->role === null || in_array($this->role, $user->roles, true))
 						{
 							$rezult[] = $user;
 						}
